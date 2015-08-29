@@ -715,10 +715,7 @@ original filing and 1 to 999 amendments.",
         max_length=45, db_column='CAND_NAMF', blank=True
     )
     cand_naml = fields.CharField(
-        max_length=200, 
-        db_column='CAND_NAML', 
-        blank=True,
-        help_text="Candidate/officeholder's last name."
+        max_length=200, db_column='CAND_NAML', blank=True
     )
     cand_nams = fields.CharField(
         max_length=10, db_column='CAND_NAMS', blank=True
@@ -1015,7 +1012,7 @@ original filing and 1 to 999 amendments.",
         max_length=200, db_column='BAL_NAME', blank=True
     )
     bal_num = fields.CharField(max_length=7, db_column='BAL_NUM', blank=True)
-    cmte_id = fields.CharField(max_length=9, db_column='CMTE_ID', blank=True, help_text="Commitee Identification number.")
+    cmte_id = fields.CharField(max_length=9, db_column='CMTE_ID', blank=True)
     control_yn = fields.IntegerField(
         null=True, db_column='CONTROL_YN', blank=True
     )
@@ -3010,6 +3007,7 @@ original filing and 1 to 999 amendments.",
         db_column='PFORM_TYPE',
         db_index=True,
         choices=PFORM_TYPE_CHOICES,
+        help_text='This field is undocumented.'
     )
     ptran_id = fields.CharField(
         verbose_name='transaction ID',
@@ -3283,7 +3281,7 @@ original filing and 1 to 999 amendments.",
         db_column='THRU_DATE', max_length=32, blank=True
     )
     elect_date = fields.CharField(
-        db_column='ELECT_DATE', max_length=32, blank=True, help_text='date of election'
+        db_column='ELECT_DATE', max_length=32, blank=True
     )
     cand_naml = fields.CharField(
         db_column='CAND_NAML', max_length=81, blank=True
@@ -3372,8 +3370,7 @@ original filing and 1 to 999 amendments.",
     yr_of_elec = fields.IntegerField(
         db_column='YR_OF_ELEC',
         blank=True,
-        null=True,
-        help_text='year of election'
+        null=True
     )
     elec_type = fields.IntegerField(
         db_column='ELEC_TYPE', blank=True, null=True
@@ -3385,10 +3382,10 @@ original filing and 1 to 999 amendments.",
         db_column='CAN_SIG', max_length=13, blank=True
     )
     account_no = fields.CharField(
-        db_column='ACCOUNT_NO', max_length=22, blank=True, help_text='account number'
+        db_column='ACCOUNT_NO', max_length=22, blank=True
     )
     acct_op_dt = fields.DateField(
-        db_column='ACCT_OP_DT', blank=True, null=True, help_text='account open date'
+        db_column='ACCT_OP_DT', blank=True, null=True
     )
     party_cd = fields.IntegerField(
         db_column='PARTY_CD', blank=True, null=True
@@ -3506,23 +3503,14 @@ Part R: late payments received from')
         max_length=30, db_column='PAYOR_CITY', blank=True
     )
     payor_st = fields.CharField(
-        max_length=2, 
-        db_column='PAYOR_ST', 
-        blank=True,
-        help_text="Payor's State."
+        max_length=2, db_column='PAYOR_ST', blank=True
     )
     payor_zip4 = fields.CharField(
-        max_length=10, 
-        db_column='PAYOR_ZIP4', 
-        blank=True,
-        help_text="Payor's zip code."
+        max_length=10, db_column='PAYOR_ZIP4', blank=True
     )
     date_rcvd = fields.DateField(db_column='DATE_RCVD', null=True)
     amt_rcvd = fields.DecimalField(
-        max_digits=16, 
-        decimal_places=2, 
-        db_column='AMT_RCVD',
-        help_text="Amount received"
+        max_digits=16, decimal_places=2, db_column='AMT_RCVD'
     )
     cand_naml = fields.CharField(
         max_length=200, db_column='CAND_NAML', blank=True
@@ -3557,12 +3545,7 @@ CAL document for a list of valid codes."
     bal_name = fields.CharField(
         max_length=200, db_column='BAL_NAME', blank=True
     )
-    bal_num = fields.CharField(
-        max_length=7, 
-        db_column='BAL_NUM', 
-        blank=True,
-        help_text="Ballot measure number or letter."
-    )
+    bal_num = fields.CharField(max_length=7, db_column='BAL_NUM', blank=True)
     bal_juris = fields.CharField(
         max_length=40, db_column='BAL_JURIS', blank=True
     )
